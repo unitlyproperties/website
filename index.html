@@ -203,7 +203,7 @@
     padding: 30px 20px;
   }
 
-  /* 🔥 THIS IS THE BIG ONE */
+  /* ADDED this section on style to make mobile Friendly */
   .split {
     grid-template-columns: 1fr; /* stack vertically */
     gap: 20px;
@@ -216,12 +216,38 @@
   }
 
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+.logo img {
+  height: 30px;
+}
+
+.logo span {
+  font-size: 16px;
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Unitly Properties</h1>
+  <div class="logo">
+    <img src="images/logo.png" alt="Unitly Properties Logo">
+    <span>Unitly Properties</span>
+  </div>
   <a class="cta-btn" href="#offer">Get Cash Offer</a>
 </header>
 
