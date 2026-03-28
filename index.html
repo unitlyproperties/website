@@ -167,6 +167,55 @@
       opacity: 1;
       transform: translateY(0);
     }
+    @media (max-width: 768px) {
+
+  /* Header */
+  header {
+    padding: 15px 20px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .cta-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Sections */
+  section {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  /* 🔥 THIS IS THE BIG ONE */
+  .split {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 20px;
+  }
+
+  /* Form */
+  .offer-form {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+}
 </style>
 </head>
 <body>
