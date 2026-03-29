@@ -6,23 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Unitly Properties</title>
   <link rel="icon" href="/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #1a1a1a;
     }
 
-    /* HEADER */
+    /* HEADER (75% smaller) */
     header {
       background: rgba(26, 89, 60, 0.9);
-      padding: 20px 40px;
+      padding: 6px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -34,16 +32,12 @@
 
     .cta-btn {
       background: #4f8cff;
-      padding: 12px 22px;
-      border-radius: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
       color: white;
       text-decoration: none;
       font-weight: 600;
-      transition: 0.25s ease;
-    }
-
-    .cta-btn:hover {
-      background: #2563eb;
+      font-size: 14px;
     }
 
     /* HERO */
@@ -51,44 +45,57 @@
       height: 85vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 60px 40px 40px 40px;
+      justify-content: center;
+      padding: 40px;
       color: #fff;
-      text-shadow: 0 3px 14px rgba(0,0,0,0.6);
     }
 
+    /* TEXT BOX */
     .hero-content {
       max-width: 700px;
+      background: rgba(0,0,0,0.45);
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     .hero h2 {
-      font-size: 50px;
-      font-weight: 650;
+      font-size: 48px;
+      margin-bottom: 10px;
     }
+
     .hero h3 {
-      font-size: 35px;
-      font-weight: 165;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 15px;
     }
 
+    /* DIFFERENT COLOR TEXT */
     .hero p {
-      font-size: 22px;
-      margin-top: 12px;
+      font-size: 20px;
+      color: #a7f3d0;
     }
 
-    .hero button {
-      align-self: flex-start;
+    /* FLOATING BUTTON (BOTTOM LEFT ALWAYS) */
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
       background: #4f8cff;
-      border: none;
-      padding: 16px 28px;
-      font-size: 17px;
       color: white;
+      padding: 16px 22px;
       border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
+      border: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 999;
       transition: 0.25s ease;
-      margin-top: auto;
     }
 
-    .hero button:hover {
+    .floating-cta:hover {
       transform: scale(1.05);
       background: #2563eb;
     }
@@ -119,7 +126,6 @@
 
     .feature-box:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
 
     .feature-box h3 {
@@ -186,44 +192,35 @@
       text-decoration: underline;
     }
 
-    /* Fade animation */
-    [data-fade] {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-
-    [data-fade].visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     /* LOGO */
     .logo {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
 
     .logo img {
-      height: 60px;
+      height: 35px;
     }
 
     .logo span {
-      font-size: 32px;
+      font-size: 20px;
       font-weight: 700;
-      color: white;
     }
 
     /* MOBILE */
     @media (max-width: 768px) {
       .hero {
         height: auto;
-        padding: 50px 20px;
+        padding: 30px 20px;
       }
 
       .hero h2 {
-        font-size: 32px;
+        font-size: 30px;
+      }
+
+      .hero-content {
+        padding: 20px;
       }
 
       section {
@@ -235,12 +232,11 @@
         grid-template-columns: 1fr;
       }
 
-      .logo img {
-        height: 40px;
-      }
-
-      .logo span {
-        font-size: 20px;
+      .floating-cta {
+        left: 15px;
+        bottom: 15px;
+        padding: 14px 18px;
+        font-size: 14px;
       }
     }
   </style>
@@ -262,11 +258,12 @@
     <h3>Discover safe and affordable homes for everyone today.</h3>
     <p>Sell your home quickly and easily. We provide instant, no-obligation cash offers for homeowners who want to move fast.</p>
   </div>
-
-  <button onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">
-    Request Your Free Cash Offer
-  </button>
 </div>
+
+<!-- FLOATING BUTTON -->
+<button class="floating-cta" onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">
+  Request Your Free Cash Offer
+</button>
 
 <section data-fade>
   <h2>Why Choose Unitly Properties?</h2>
