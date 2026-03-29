@@ -17,7 +17,6 @@
       color: #1a1a1a;
     }
 
-    /* HEADER (increased 10%) */
     header {
       background: rgba(26, 89, 60, 0.9);
       padding: 7px 22px;
@@ -40,7 +39,6 @@
       font-size: 14px;
     }
 
-    /* HERO */
     .hero {
       height: 85vh;
       display: flex;
@@ -50,7 +48,6 @@
       color: #fff;
     }
 
-    /* TEXT BOX (less transparent) */
     .hero-content {
       max-width: 700px;
       background: rgba(0,0,0,0.65);
@@ -91,7 +88,7 @@
       border: none;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       z-index: 999;
-      transition: 0.25s ease;
+      transition: all 0.3s ease;
     }
 
     .floating-cta:hover {
@@ -309,15 +306,21 @@
 
 <script>
   const btn = document.getElementById("floatingBtn");
-  const offerSection = document.getElementById("offer");
+  const offer = document.getElementById("offer");
+
+  const stopOffset = 140; // distance above form
 
   window.addEventListener("scroll", () => {
-    const rect = offerSection.getBoundingClientRect();
-    const offset = 120;
+    const offerTop = offer.offsetTop;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
 
-    if (rect.top < window.innerHeight - offset) {
+    const triggerPoint = offerTop - windowHeight + stopOffset;
+
+    if (scrollY >= triggerPoint) {
       btn.style.position = "absolute";
-      btn.style.top = (offerSection.offsetTop - offset) + "px";
+      btn.style.top = (offerTop - stopOffset) + "px";
+      btn.style.bottom = "auto";
     } else {
       btn.style.position = "fixed";
       btn.style.bottom = "20px";
