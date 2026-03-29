@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -18,10 +19,20 @@
       color: #1a1a1a;
     }
 
+    /* DARK OVERLAY */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: -1;
+    }
+
     /* HEADER */
     header {
-      background: #1a593c;
-      padding: 20px 40px;
+      background: rgba(26, 89, 60, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 18px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -29,67 +40,78 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-      font-weight: 700;
-      color: #0f5d2f; /* dark green */
-    }
+
     .cta-btn {
-      background: #4f8cff;
+      background: linear-gradient(135deg, #4f8cff, #2563eb);
       padding: 12px 22px;
-      border-radius: 8px;
+      border-radius: 10px;
       color: white;
       text-decoration: none;
       font-weight: 600;
+      transition: 0.25s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
     }
 
     /* HERO */
     .hero {
-      background: rgba(255,255,255,0.0); /* transparent, no overlay */
-      height: 75vh;
+      height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 0 40px;
-      color: #fff; /* text color readable over image */
-      text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+      color: #fff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.7);
     }
+
     .hero h2 {
-      font-size: 56px;
-      max-width: 600px;
+      font-size: 60px;
+      max-width: 650px;
       font-weight: 700;
+      line-height: 1.1;
     }
+
     .hero p {
-      font-size: 18px;
-      max-width: 480px;
-      margin-top: 10px;
+      font-size: 19px;
+      max-width: 520px;
+      margin-top: 15px;
       opacity: 0.95;
     }
+
     .hero button {
-      margin-top: 25px;
-      background: #4f8cff;
+      margin-top: 30px;
+      background: linear-gradient(135deg, #4f8cff, #2563eb);
       border: none;
-      padding: 14px 26px;
+      padding: 16px 28px;
       font-size: 17px;
       color: white;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
       transition: 0.25s ease;
     }
     .hero button:hover {
       transform: scale(1.05) translateY(-3px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
 
     /* SECTIONS */
     section {
       padding: 60px 40px;
-      background: rgba(255,255,255,0.0); /* transparent over aerial image */
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
       margin: 40px;
       border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    section h2 {
+      color: white;
     }
 
     .split {
@@ -100,52 +122,66 @@
     }
 
     .feature-box {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       padding: 30px;
       border-radius: 18px;
-      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.1);
       border: 1px solid #dcefe2;
       transition: 0.3s ease;
     }
+
     .feature-box:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       border-color: #4f8cff;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.2);
     }
+
     .feature-box h3 {
       margin-top: 0;
       font-size: 24px;
-      color: #0f5d2f; /* dark green for headings optional */
+      color: #0f5d2f;
     }
 
     /* FORM */
     .offer-form {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.98);
       padding: 40px;
       border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
       max-width: 500px;
     }
-    .offer-form input, .offer-form textarea {
+
+    .offer-form input,
+    .offer-form textarea {
       width: 100%;
-      padding: 12px;
-      margin-top: 12px;
-      border-radius: 8px;
+      padding: 14px;
+      margin-top: 14px;
+      border-radius: 10px;
       border: 1px solid #d0d0d0;
       font-size: 16px;
+      transition: 0.2s ease;
     }
+
+    .offer-form input:focus,
+    .offer-form textarea:focus {
+      border-color: #4f8cff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(79,140,255,0.2);
+    }
+
     .offer-form button {
       margin-top: 20px;
       width: 100%;
-      padding: 14px;
-      background: #1a593c;
+      padding: 15px;
+      background: linear-gradient(135deg, #1a593c, #0f5d2f);
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 18px;
       cursor: pointer;
       transition: 0.25s ease;
     }
+
     .offer-form button:hover {
       background: #4f8cff;
       transform: scale(1.03);
@@ -154,12 +190,13 @@
     /* FOOTER */
     footer {
       padding: 40px;
-      background: #0e131f;
+      background: rgba(14,19,31,0.9);
       color: white;
       text-align: center;
+      backdrop-filter: blur(10px);
     }
 
-    /* Smooth section fade-in */
+    /* Fade animation */
     [data-fade] {
       opacity: 0;
       transform: translateY(20px);
@@ -169,82 +206,59 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 30px;
+    }
+
+    .logo span {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* MOBILE */
     @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
 
-  /* Header */
-  header {
-    padding: 15px 20px;
-  }
+      .hero {
+        height: auto;
+        padding: 60px 20px;
+      }
 
-  header h1 {
-    font-size: 20px;
-  }
+      .hero h2 {
+        font-size: 34px;
+      }
 
-  .cta-btn {
-    padding: 10px 14px;
-    font-size: 14px;
-  }
+      section {
+        margin: 20px;
+        padding: 30px 20px;
+      }
 
-  /* Hero */
-  .hero {
-    height: auto;
-    padding: 60px 20px;
-  }
+      .split {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
 
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  /* Sections */
-  section {
-    margin: 20px;
-    padding: 30px 20px;
-  }
-
-  /* ADDED this section on style to make mobile Friendly */
-  .split {
-    grid-template-columns: 1fr; /* stack vertically */
-    gap: 20px;
-  }
-
-  /* Form */
-  .offer-form {
-    padding: 20px;
-    max-width: 100%;
-  }
-
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  height: 80px;
-  width: auto;
-}
-
-.logo span {
-  font-size: 20px;
-  font-weight: 700;
-  color: white;
-}
-.logo img {
-  height: 30px;
-}
-
-.logo span {
-  font-size: 16px;
-}
-</style>
+      .offer-form {
+        padding: 20px;
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  
+
 <header>
   <div class="logo">
     <img src="https://raw.githubusercontent.com/unitlyproperties/website/1335a11f3d6eb2916349ee7fceb9eccac9095c0f/logo.png" alt="Logo">
@@ -253,14 +267,12 @@
   <a class="cta-btn" href="#offer">Get Cash Offer</a>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <h2>Fast, Fair Cash Offers for Your Home — No Repairs. No Fees. No Stress.</h2>
   <p>Sell your home quickly and easily. We provide instant, no-obligation cash offers for homeowners who want to move fast.</p>
   <button onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">Request Your Cash Offer</button>
 </div>
 
-<!-- WHY UNITLY -->
 <section data-fade>
   <h2>Why Choose Unitly Properties?</h2>
   <div class="split">
@@ -283,48 +295,31 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section data-fade>
   <h2>What Homeowners Say</h2>
   <div class="split">
     <div class="feature-box">
       <h3>"Amazing experience!"</h3>
-      <p>Unitly made selling my house quick and stress-free. I got a cash offer in less than a day and closed within a week.</p>
+      <p>Unitly made selling my house quick and stress-free.</p>
       <strong>- Sarah M.</strong>
     </div>
     <div class="feature-box">
       <h3>"Highly recommend."</h3>
-      <p>I needed to relocate fast. They gave me a fair offer, no repairs needed, and handled everything smoothly.</p>
+      <p>I needed to relocate fast. They gave me a fair offer.</p>
       <strong>- Jason R.</strong>
     </div>
   </div>
 </section>
 
-<!-- FORM -->
 <section id="offer">
   <h2>Request Your Free Cash Offer</h2>
 
-  <form 
-    action="https://formspree.io/f/xgopavjg"
-    method="POST"
-    class="offer-form"
-  >
+  <form action="https://formspree.io/f/xgopavjg" method="POST" class="offer-form">
     <input type="text" name="name" placeholder="Your Name" required />
-    
     <input type="text" name="address" placeholder="Property Address" required />
-    
     <input type="text" name="phone" placeholder="Phone Number" />
-    
-    <textarea 
-      name="message" 
-      rows="4" 
-      placeholder="Tell us about your property"
-      required
-    ></textarea>
-
-    <!-- Optional: ensures replies go to the user -->
+    <textarea name="message" rows="4" placeholder="Tell us about your property" required></textarea>
     <input type="hidden" name="_replyto" value="" />
-
     <button type="submit">Get My Cash Offer</button>
   </form>
 </section>
@@ -343,5 +338,6 @@
 
   elements.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
