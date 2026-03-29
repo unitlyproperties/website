@@ -88,7 +88,12 @@
       border: none;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       z-index: 999;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease, opacity 0.3s ease;
+    }
+
+    .floating-cta.hide {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .floating-cta:hover {
@@ -308,25 +313,17 @@
   const btn = document.getElementById("floatingBtn");
   const offer = document.getElementById("offer");
 
-  const stopOffset = 140; // distance above form
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        btn.classList.add("hide");
+      } else {
+        btn.classList.remove("hide");
+      }
+    });
+  }, { threshold: 0.2 });
 
-  window.addEventListener("scroll", () => {
-    const offerTop = offer.offsetTop;
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    const triggerPoint = offerTop - windowHeight + stopOffset;
-
-    if (scrollY >= triggerPoint) {
-      btn.style.position = "absolute";
-      btn.style.top = (offerTop - stopOffset) + "px";
-      btn.style.bottom = "auto";
-    } else {
-      btn.style.position = "fixed";
-      btn.style.bottom = "20px";
-      btn.style.top = "auto";
-    }
-  });
+  observer.observe(offer);
 </script>
 
 </body>
