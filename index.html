@@ -12,15 +12,15 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #1a1a1a;
     }
 
-    /* HEADER (75% smaller) */
+    /* HEADER (increased 10%) */
     header {
       background: rgba(26, 89, 60, 0.9);
-      padding: 6px 20px;
+      padding: 7px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -32,7 +32,7 @@
 
     .cta-btn {
       background: #4f8cff;
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: 6px;
       color: white;
       text-decoration: none;
@@ -50,10 +50,10 @@
       color: #fff;
     }
 
-    /* TEXT BOX */
+    /* TEXT BOX (less transparent) */
     .hero-content {
       max-width: 700px;
-      background: rgba(0,0,0,0.45);
+      background: rgba(0,0,0,0.65);
       padding: 30px;
       border-radius: 16px;
       backdrop-filter: blur(6px);
@@ -71,13 +71,12 @@
       margin-bottom: 15px;
     }
 
-    /* DIFFERENT COLOR TEXT */
     .hero p {
       font-size: 20px;
       color: #a7f3d0;
     }
 
-    /* FLOATING BUTTON (BOTTOM LEFT ALWAYS) */
+    /* FLOATING BUTTON */
     .floating-cta {
       position: fixed;
       bottom: 20px;
@@ -100,7 +99,6 @@
       background: #2563eb;
     }
 
-    /* SECTIONS */
     section {
       padding: 60px 40px;
       background: rgba(255,255,255,0.95);
@@ -134,7 +132,6 @@
       color: #0f5d2f;
     }
 
-    /* FORM */
     .offer-form {
       background: #fff;
       padding: 40px;
@@ -169,7 +166,6 @@
       background: #4f8cff;
     }
 
-    /* FOOTER */
     footer {
       padding: 40px;
       background: #0e131f;
@@ -188,11 +184,6 @@
       font-weight: 600;
     }
 
-    .socials a:hover {
-      text-decoration: underline;
-    }
-
-    /* LOGO */
     .logo {
       display: flex;
       align-items: center;
@@ -208,7 +199,6 @@
       font-weight: 700;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .hero {
         height: auto;
@@ -230,13 +220,6 @@
 
       .split {
         grid-template-columns: 1fr;
-      }
-
-      .floating-cta {
-        left: 15px;
-        bottom: 15px;
-        padding: 14px 18px;
-        font-size: 14px;
       }
     }
   </style>
@@ -260,8 +243,7 @@
   </div>
 </div>
 
-<!-- FLOATING BUTTON -->
-<button class="floating-cta" onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">
+<button id="floatingBtn" class="floating-cta" onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">
   Request Your Free Cash Offer
 </button>
 
@@ -326,14 +308,22 @@
 </footer>
 
 <script>
-  const elements = document.querySelectorAll('[data-fade]');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, {threshold: 0.2});
+  const btn = document.getElementById("floatingBtn");
+  const offerSection = document.getElementById("offer");
 
-  elements.forEach(el => observer.observe(el));
+  window.addEventListener("scroll", () => {
+    const rect = offerSection.getBoundingClientRect();
+    const offset = 120;
+
+    if (rect.top < window.innerHeight - offset) {
+      btn.style.position = "absolute";
+      btn.style.top = (offerSection.offsetTop - offset) + "px";
+    } else {
+      btn.style.position = "fixed";
+      btn.style.bottom = "20px";
+      btn.style.top = "auto";
+    }
+  });
 </script>
 
 </body>
