@@ -14,7 +14,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1950&q=80') no-repeat center top;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center top;
       background-size: cover;
       color: #1a1a1a;
     }
@@ -48,37 +48,40 @@
 
     /* HERO */
     .hero {
-      height: 80vh;
+      height: 85vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 0 40px;
+      justify-content: space-between; /* push button down */
+      padding: 60px 40px 40px 40px;
       color: #fff;
       text-shadow: 0 3px 12px rgba(0,0,0,0.6);
     }
 
+    .hero-content {
+      max-width: 650px;
+    }
+
     .hero h2 {
       font-size: 56px;
-      max-width: 600px;
       font-weight: 700;
     }
 
     .hero p {
       font-size: 18px;
-      max-width: 500px;
       margin-top: 10px;
     }
 
     .hero button {
-      margin-top: 25px;
+      align-self: flex-start;
       background: #4f8cff;
       border: none;
-      padding: 14px 26px;
+      padding: 16px 28px;
       font-size: 17px;
       color: white;
       border-radius: 10px;
       cursor: pointer;
       transition: 0.25s ease;
+      margin-top: auto;
     }
 
     .hero button:hover {
@@ -164,6 +167,21 @@
       text-align: center;
     }
 
+    .socials {
+      margin-top: 15px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #4f8cff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+    }
+
     /* Fade animation */
     [data-fade] {
       opacity: 0;
@@ -184,24 +202,20 @@
     }
 
     .logo img {
-      height: 60px; /* doubled */
+      height: 60px;
     }
 
     .logo span {
-      font-size: 32px; /* doubled */
+      font-size: 32px;
       font-weight: 700;
       color: white;
     }
 
     /* MOBILE */
     @media (max-width: 768px) {
-      header {
-        padding: 15px 20px;
-      }
-
       .hero {
         height: auto;
-        padding: 60px 20px;
+        padding: 50px 20px;
       }
 
       .hero h2 {
@@ -239,9 +253,14 @@
 </header>
 
 <div class="hero">
-  <h2>Fast, Fair Cash Offers for Your Home — No Repairs. No Fees. No Stress.</h2>
-  <p>Sell your home quickly and easily. We provide instant, no-obligation cash offers for homeowners who want to move fast.</p>
-  <button onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">Request Your Cash Offer</button>
+  <div class="hero-content">
+    <h2>Fast, Fair Cash Offers for Your Home — No Repairs. No Fees. No Stress.</h2>
+    <p>Sell your home quickly and easily. We provide instant, no-obligation cash offers for homeowners who want to move fast.</p>
+  </div>
+
+  <button onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">
+    Request Your Cash Offer
+  </button>
 </div>
 
 <section data-fade>
@@ -297,6 +316,11 @@
 
 <footer>
   <p>© 2025 Unitly Properties. All rights reserved.</p>
+
+  <div class="socials">
+    <a href="https://www.tiktok.com/@unitlyproperties" target="_blank">TikTok</a>
+    <a href="https://linkedin.com/company/unitlyproperties/" target="_blank">LinkedIn</a>
+  </div>
 </footer>
 
 <script>
