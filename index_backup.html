@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="We buy houses for cash fast. No repairs, no fees. Get a fair cash offer from Unitly Properties today.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unitly Properties</title>
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #1a1a1a;
+    }
+
+    /* HEADER */
+    header {
+      background: #1a593c;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      color: #0f5d2f; /* dark green */
+    }
+    .cta-btn {
+      background: #4f8cff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* HERO */
+    .hero {
+      background: rgba(255,255,255,0.0); /* transparent, no overlay */
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 40px;
+      color: #fff; /* text color readable over image */
+      text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+    }
+    .hero h2 {
+      font-size: 56px;
+      max-width: 600px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 480px;
+      margin-top: 10px;
+      opacity: 0.95;
+    }
+    .hero button {
+      margin-top: 25px;
+      background: #4f8cff;
+      border: none;
+      padding: 14px 26px;
+      font-size: 17px;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+      transition: 0.25s ease;
+    }
+    .hero button:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 40px;
+      background: rgba(255,255,255,0.0); /* transparent over aerial image */
+      margin: 40px;
+      border-radius: 22px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .feature-box {
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      border: 1px solid #dcefe2;
+      transition: 0.3s ease;
+    }
+    .feature-box:hover {
+      transform: translateY(-6px);
+      border-color: #4f8cff;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .feature-box h3 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #0f5d2f; /* dark green for headings optional */
+    }
+
+    /* FORM */
+    .offer-form {
+      background: rgba(255,255,255,0.95);
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 500px;
+    }
+    .offer-form input, .offer-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      border: 1px solid #d0d0d0;
+      font-size: 16px;
+    }
+    .offer-form button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: #1a593c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+    .offer-form button:hover {
+      background: #4f8cff;
+      transform: scale(1.03);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px;
+      background: #0e131f;
+      color: white;
+      text-align: center;
+    }
+
+    /* Smooth section fade-in */
+    [data-fade] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    [data-fade].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+
+  /* Header */
+  header {
+    padding: 15px 20px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .cta-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Sections */
+  section {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  /* ADDED this section on style to make mobile Friendly */
+  .split {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 20px;
+  }
+
+  /* Form */
+  .offer-form {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+.logo img {
+  height: 30px;
+}
+
+.logo span {
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+  
+<header>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/unitlyproperties/website/1335a11f3d6eb2916349ee7fceb9eccac9095c0f/logo.png" alt="Logo">
+    <span>Unitly Properties</span>
+  </div>
+  <a class="cta-btn" href="#offer">Get Cash Offer</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>Fast, Fair Cash Offers for Your Home — No Repairs. No Fees. No Stress.</h2>
+  <p>Sell your home quickly and easily. We provide instant, no-obligation cash offers for homeowners who want to move fast.</p>
+  <button onclick="document.getElementById('offer').scrollIntoView({behavior: 'smooth'})">Request Your Cash Offer</button>
+</div>
+
+<!-- WHY UNITLY -->
+<section data-fade>
+  <h2>Why Choose Unitly Properties?</h2>
+  <div class="split">
+    <div class="feature-box">
+      <h3>Fast Cash Offers</h3>
+      <p>Get a competitive cash offer within 24 hours—no long listing process, no waiting.</p>
+    </div>
+    <div class="feature-box">
+      <h3>No Repairs Needed</h3>
+      <p>We buy homes as-is. Skip the contractor quotes and expensive renovations.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Close on Your Timeline</h3>
+      <p>You choose the closing date. We make the process simple and stress-free.</p>
+    </div>
+    <div class="feature-box">
+      <h3>No Fees or Commissions</h3>
+      <p>Keep more money in your pocket—no realtor fees, no hidden charges.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section data-fade>
+  <h2>What Homeowners Say</h2>
+  <div class="split">
+    <div class="feature-box">
+      <h3>"Amazing experience!"</h3>
+      <p>Unitly made selling my house quick and stress-free. I got a cash offer in less than a day and closed within a week.</p>
+      <strong>- Sarah M.</strong>
+    </div>
+    <div class="feature-box">
+      <h3>"Highly recommend."</h3>
+      <p>I needed to relocate fast. They gave me a fair offer, no repairs needed, and handled everything smoothly.</p>
+      <strong>- Jason R.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="offer">
+  <h2>Request Your Free Cash Offer</h2>
+
+  <form 
+    action="https://formspree.io/f/xgopavjg"
+    method="POST"
+    class="offer-form"
+  >
+    <input type="text" name="name" placeholder="Your Name" required />
+    
+    <input type="text" name="address" placeholder="Property Address" required />
+    
+    <input type="text" name="phone" placeholder="Phone Number" />
+    
+    <textarea 
+      name="message" 
+      rows="4" 
+      placeholder="Tell us about your property"
+      required
+    ></textarea>
+
+    <!-- Optional: ensures replies go to the user -->
+    <input type="hidden" name="_replyto" value="" />
+
+    <button type="submit">Get My Cash Offer</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Unitly Properties. All rights reserved.</p>
+</footer>
+
+<script>
+  const elements = document.querySelectorAll('[data-fade]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, {threshold: 0.2});
+
+  elements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
