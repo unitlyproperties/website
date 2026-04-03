@@ -1,31 +1,182 @@
-<h1>Sell Your House Fast in Cleveland, OH</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Sell your house fast in Cleveland, OH. We buy houses for cash with no repairs, no fees, and fast closings.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Your House Fast in Cleveland, OH | Unitly Properties</title>
 
-<p>Need to sell your house fast in Cleveland? Unitly Properties buys houses for cash in Cleveland, Ohio. We help homeowners sell quickly without repairs, agent fees, or delays.</p>
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<h2>We Buy Houses in Cleveland – Any Condition</h2>
-<p>No matter the situation, we can help:</p>
-<ul>
-  <li>Facing foreclosure</li>
-  <li>Inherited a property</li>
-  <li>Property needs major repairs</li>
-  <li>Tired of being a landlord</li>
-  <li>Behind on payments</li>
-</ul>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #1a1a1a;
+    }
 
-<h2>How Our Process Works</h2>
-<ol>
-  <li>Contact us with your property details</li>
-  <li>We evaluate your home and make a fair cash offer</li>
-  <li>You choose your closing date</li>
-</ol>
+    header {
+      background: rgba(26, 89, 60, 0.9);
+      padding: 10px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-<h2>Why Sell to Unitly Properties?</h2>
-<ul>
-  <li>No commissions or hidden fees</li>
-  <li>No repairs needed</li>
-  <li>Fast closings</li>
-  <li>Local Cleveland market knowledge</li>
-</ul>
+    .cta-btn {
+      background: #4f8cff;
+      padding: 9px 18px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
 
-<h2>Get Your Cash Offer Today</h2>
-<p>If you're searching for “sell my house fast in Cleveland” or “we buy houses in Cleveland,” we’re here to help. Contact Unitly Properties today to get your no-obligation cash offer.</p>
+    .hero {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      padding: 40px;
+      color: #fff;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      background: rgba(0,0,0,0.45);
+      padding: 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+    }
+
+    section {
+      padding: 60px 40px;
+      background: rgba(255,255,255,0.95);
+      margin: 40px;
+      border-radius: 22px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .feature-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      border: 1px solid #eaeaea;
+    }
+
+    .offer-form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 500px;
+    }
+
+    .offer-form input,
+    .offer-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      border: 1px solid #d0d0d0;
+    }
+
+    .offer-form button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: #1a593c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 40px;
+      background: #0e131f;
+      color: white;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .logo span {
+      font-size: 28px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/unitlyproperties/website/1335a11f3d6eb2916349ee7fceb9eccac9095c0f/logo.png">
+    <span>UNITLY Properties</span>
+  </div>
+  <a class="cta-btn" href="#offer">Get Cash Offer</a>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Sell Your House Fast in Cleveland, OH</h1>
+    <p>We buy houses for cash in Cleveland. No repairs, no fees, and close on your timeline.</p>
+  </div>
+</div>
+
+<section>
+  <h2>We Buy Houses in Cleveland – Any Condition</h2>
+  <div class="split">
+    <div class="feature-box">Facing foreclosure</div>
+    <div class="feature-box">Inherited property</div>
+    <div class="feature-box">Needs repairs</div>
+    <div class="feature-box">Problem tenants</div>
+  </div>
+</section>
+
+<section id="offer">
+  <h2>Get Your Cash Offer</h2>
+
+  <form action="https://formspree.io/f/xgopavjg" method="POST" class="offer-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="text" name="address" placeholder="Property Address" required />
+    <input type="text" name="phone" placeholder="Phone Number" />
+    <textarea name="message" rows="4" placeholder="Tell us about your property" required></textarea>
+    <button type="submit">Get My Cash Offer</button>
+  </form>
+
+  <p>We also buy houses in 
+    <a href="/sell-house-fast-norfolk-va.html">Norfolk</a> and 
+    <a href="/sell-house-fast-raleigh-nc.html">Raleigh</a>.
+  </p>
+</section>
+
+<footer>
+  <p>© 2025 Unitly Properties. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
